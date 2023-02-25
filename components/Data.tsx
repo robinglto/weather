@@ -74,7 +74,7 @@ const Data: React.FC = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.NEXT_PUBLIC_API_KEY}
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bd848f8597bb9b1938a469ca1800dedb
       `
     )
       .then((response) => response.json())
@@ -98,7 +98,7 @@ const Data: React.FC = () => {
     <div className={`flex lg:justify-around justify-center mx-16 mt-16 `}>
       <div className="text-black w-3/3 -mx-10  md:mx-10 sm:w-2/3 lg:w-1/3">
         <form onSubmit={handleSubmit}>
-          <div className="w-full flex space-x-2 bg-slate-100 px-4 py-6  rounded-lg">
+          <div className="w-full flex space-x-2 bg-slate-100 px-4 py-6  rounded-lg shadow-bg-slate-200 shadow-inner">
             <button
               className=" bg-inherent text-black font-medium text-xs leading-tight uppercasefocus:shadow-lg transition duration-150 ease-in-out flex items-center"
               type="button"
@@ -120,14 +120,14 @@ const Data: React.FC = () => {
           </div>
         </form>
         <div className={`w-3/3 ${value ? "block" : "hidden"}`}>
-          <div className="mt-12  bg-slate-100 py-12  rounded-xl px-12">
+          <div className="mt-12  bg-slate-100 py-12 shadow-bg-slate-200 shadow-inner  rounded-xl px-12">
             <div>
               <h3 className="text-md subpixel-antialiased font-semibold">
                 {weatherData.name ? weatherData.name : "City"},{"  "}
                 {weatherData.sys?.country} Weather
               </h3>
               <p className="text-xs">
-                {date.getDate()} {currentDay.toLowerCase()} of {currentMonth}
+                {date.getDate()} {currentDay.toLowerCase()} of {currentMonth} at {`${currentHour}:${currentMinute}`}
               </p>
               <span className="text-4xl">
                 {temperatura ? temperatura.toFixed(1) : " "}°
@@ -171,6 +171,16 @@ const Data: React.FC = () => {
                   valor={weatherData.coord?.lat}
                   img="https://img.icons8.com/ios/50/1A1A1A/latitude.png"
                 />
+                                <Values
+                  texto="Max Temp"
+                  valor={temperaturaMax.toFixed(1)}
+                  img="https://img.icons8.com/ios/50/1A1A1A/latitude.png"
+                />
+                                             <Values
+                  texto="Max Temp"
+                  valor={temperaturaMin.toFixed(1)}
+                  img="https://img.icons8.com/ios/50/1A1A1A/latitude.png"
+                />
 
                 <Values
                   texto="Sunrise"
@@ -186,45 +196,7 @@ const Data: React.FC = () => {
                   }${sunset.getMinutes() ? sunset.getMinutes() : "..."}`}
                   img="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/1A1A1A/external-sunset-weather-kosonicon-solid-kosonicon.png"
                 />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className={`mt-32 ${value ? "block" : "hidden"}`}>
-        <div className="lg:block hidden space-y-12">
-          <div className="flex justify-center">
-            <Image
-              className="w-72 h-72"
-              src={
-                weatherDescription === "Sunny"
-                  ? sunny
-                  : weatherDescription === "Rainy"
-                  ? rainy
-                  : cloudy
-              }
-              alt="Description"
-            />
-          </div>
-          <div className="text-black subpixel-antialiased text-lg ">
-            <p className="font-semibold">
-              Today/s Forecast for {weatherData.name ? weatherData.name : "..."}
-              , {weatherData.sys?.country ? weatherData.sys.country : "..."}
-            </p>
-            <div className="mt-2 ">
-              <div className="flex justify-around space-x-4">
-                <div>
-                  <p className="font-semibold">Max</p>
-                  <p>{temperaturaMax.toFixed(1)}</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Min</p>
-                  <p>{temperaturaMin.toFixed(1)}</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Last updated</p>
-                  <p>Today at {`${currentHour}:${currentMinute}`}</p>
-                </div>
+                
               </div>
             </div>
           </div>

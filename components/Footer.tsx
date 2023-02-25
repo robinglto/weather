@@ -6,7 +6,7 @@ export default function Footer() {
     // <div className="flex items-center justify-center  my-20 absolute bottom-8 right-1/3">
     <div className="flex justify-center my-20">
       <div className="space-y-2">
-        <p className="subpixel-antialiased text-black mx-10 text-center md:text-lg text-md">
+        <p className="subpixel-antialiased text-black mx-10 text-center  text-md">
           Built with{" "}
           <Link
             className="hover:text-gray-400 hover:decoration-dashed hover:underline cursor-pointer transition duration-500 ease-in-out"
@@ -33,13 +33,13 @@ export default function Footer() {
         <div className="flex justify-center space-x-4 ">
           <Link
             href={"https://twitter.com/robinglto"}
-            className="hover:text-gray-400 subpixel-antialiased md:text-lg text-md text-black cursor-pointer transition duration-500 ease-in-out"
+            className="hover:text-gray-400 subpixel-antialiased text-md text-black cursor-pointer transition duration-500 ease-in-out"
           >
             Twitter
           </Link>
           <Link
             href={"https://github.com/robinglto"}
-            className="hover:text-gray-400 subpixel-antialiased md:text-lg text-md text-black cursor-pointer transition duration-500 ease-in-out"
+            className="hover:text-gray-400 subpixel-antialiased  text-md text-black cursor-pointer transition duration-500 ease-in-out"
           >
             Github
           </Link>
