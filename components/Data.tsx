@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Values from "./Values";
 import { useDebounce } from "use-debounce";
-import cloudy from "../public/cloudy.png";
-import rainy from "../public/rainy.png";
-import sunny from "../public/sunny.png";
-import Image from "next/image";
+
 
 interface WeatherData {
   main?: { temp: any; temp_min: any; temp_max: any; humidity: string };
@@ -120,7 +117,7 @@ const Data: React.FC = () => {
           </div>
         </form>
         <div className={`w-3/3 ${value ? "block" : "hidden"}`}>
-          <div className="mt-12  bg-slate-100 py-12 shadow-bg-slate-200 shadow-inner  rounded-xl px-12">
+          <div className="mt-2 bg-slate-100 py-12 shadow-bg-slate-200 shadow-inner  rounded-xl px-12">
             <div>
               <h3 className="text-md subpixel-antialiased font-semibold">
                 {weatherData.name ? weatherData.name : "City"},{"  "}
@@ -171,7 +168,7 @@ const Data: React.FC = () => {
                   valor={weatherData.coord?.lat}
                   img="https://img.icons8.com/ios/50/1A1A1A/latitude.png"
                 />
-                                <Values
+                                {/* <Values
                   texto="Max Temp"
                   valor={temperaturaMax.toFixed(1)}
                   img="https://img.icons8.com/ios/50/1A1A1A/latitude.png"
@@ -180,7 +177,7 @@ const Data: React.FC = () => {
                   texto="Max Temp"
                   valor={temperaturaMin.toFixed(1)}
                   img="https://img.icons8.com/ios/50/1A1A1A/latitude.png"
-                />
+                /> */}
 
                 <Values
                   texto="Sunrise"
