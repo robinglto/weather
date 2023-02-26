@@ -92,23 +92,25 @@ const Data: React.FC = () => {
   };
 
   return (
-    <div className={`flex lg:justify-around justify-center mx-16 mt-16 `}>
-      <div className="text-black w-3/3 -mx-10  md:mx-10 sm:w-2/3 lg:w-1/3">
+    <div className={`flex lg:justify-around justify-center mx-10 mt-16 `}>
+      <div className="text-black w-2/6   mx-10 ">
         <form onSubmit={handleSubmit}>
           <div className="w-full flex space-x-2 bg-slate-100 px-4 py-6  rounded-lg shadow-bg-slate-200 shadow-inner">
             <button
               className=" bg-inherent text-black font-medium text-xs leading-tight uppercasefocus:shadow-lg transition duration-150 ease-in-out flex items-center"
               type="button"
-              id="button-addon2"
+              name="button"
+              id="button"
             >
               {" "}
               <img
                 className="w-5 h-5 mt-1"
+                alt="search"
                 src="https://img.icons8.com/ios-filled/50/1A1A1A/marker.png"
               />
             </button>
             <input
-              className="bg-inherit	 outline-none border-b-2 border-black w-full "
+              className="bg-inherit outline-none outline-none border-b-2 border-black w-full "
               type="text"
               placeholder="Search location by city"
               value={city}
@@ -116,7 +118,8 @@ const Data: React.FC = () => {
             />
           </div>
         </form>
-        <div className={`w-3/3 ${value ? "block" : "hidden"}`}>
+        {/* <div className={`w-3/3 ${value ? "block" : "hidden"}`}> */}
+        <div className={`w-3/3`}>
           <div className="mt-2 bg-slate-100 py-12 shadow-bg-slate-200 shadow-inner  rounded-xl px-12">
             <div>
               <h3 className="text-md subpixel-antialiased font-semibold">

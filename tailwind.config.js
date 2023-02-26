@@ -5,7 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        // ...
+        inner: 'inset 0 0 20px 5px rgb(0,0,0,0.1)',
+      },
+    },
   },
   plugins: [],
 }
