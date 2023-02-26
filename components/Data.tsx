@@ -92,8 +92,8 @@ const Data: React.FC = () => {
   };
 
   return (
-    <div className={`flex lg:justify-around justify-center mx-10 mt-16 `}>
-      <div className="text-black w-2/6   mx-10 ">
+    <div className={`flex lg:justify-around justify-center mx-4 md:mx-10 mt-16 `}>
+      <div className="text-black w-full md:w-2/6   md:mx-10 ">
         <form onSubmit={handleSubmit}>
           <div className="w-full flex space-x-2 bg-slate-100 px-4 py-6  rounded-lg shadow-bg-slate-200 shadow-inner">
             <button
@@ -120,7 +120,7 @@ const Data: React.FC = () => {
         </form>
         {/* <div className={`w-3/3 ${value ? "block" : "hidden"}`}> */}
         <div className={`w-3/3`}>
-          <div className="mt-2 bg-slate-100 py-12 shadow-bg-slate-200 shadow-inner  rounded-xl px-12">
+          <div className="mt-2 bg-slate-100 py-12 shadow-bg-slate-200 shadow-inner  rounded-xl px-12 ">
             <div>
               <h3 className="text-md subpixel-antialiased font-semibold">
                 {weatherData.name ? weatherData.name : "City"},{"  "}
